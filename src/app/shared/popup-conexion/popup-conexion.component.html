@@ -1,0 +1,20 @@
+<div class="d-flex justifiy-content-center">
+    <h5 class=""> Url del servidor</h5>
+</div>
+<input class="form-control form-control-sm" [(ngModel)]="_URL_SERVICIOS">
+<small><label class="texto-success">*EJEMPLO : http://localhost/api-turnos/public/api/</label></small>
+<div class="d-flex justifiy-content-center mt-1">
+    <h5 class=""> Url de notificacion</h5>
+</div>
+<input type="text" class="form-control form-control-sm" [(ngModel)]="_config">
+<small><label class="texto-success">*EJEMPLO : http://localhost:4444</label></small>
+<div class="d-flex justifiy-content-center mt-1">
+    <h5 class=""> Url de archivos</h5>
+</div>
+<input type="text" class="form-control form-control-sm" [(ngModel)]="_URL_ARCHIVO">
+<small><label class="texto-success">*EJEMPLO : http://localhost/api-turnos/public/</label></small>
+<div class="d-flex justifiy-content-center mt-2">
+    <button class="btn btn-info btn-block " (click)="confirmarDatos()"> GUARDAR CONFIGURACION</button>
+</div>
+
+   
