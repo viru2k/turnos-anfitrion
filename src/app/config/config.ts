@@ -1,9 +1,9 @@
 
 
 
-//export const URL_SERVICIOS = 'http://localhost/api-turnos/public/api/';
-//export const config: SocketIoConfig = { url: 'http://localhost:4444', options: {} };
-//export const URL_ARCHIVO = 'http://localhost/api-turnos/public/uploads/';
+export const URL_SERVICIOS = 'http://localhost/api-turnos/public/api/';
+export const config: SocketIoConfig = { url: 'http://localhost:4444', options: {} };
+export const URL_ARCHIVO = 'http://localhost/api-turnos/public/uploads/';
 
 /***********SERVER DE PRUEBAS ********************** */
 

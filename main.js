@@ -71,18 +71,21 @@ app.on('activate', () => {
 
  ipc.on('print-to-pdf',function(event, data){
   console.log('ingreso a imprimiendo');
+  win.webContents.print({silent: true}, (success, errorType) => {
+    if (!success){
+      console.log(errorType);
+    } else{
+      console.log(success);
+      console.log('print success');
+      event.sender.send('wrote-pdf', false);
+    } 
+  })
 
+/*
   win.webContents.printToPDF(pdfSettings()).then(data => {
     const pdfPath = path.join(os.tmpdir(),'./generated_pdf.pdf' );
 
-    win.webContents.print({silent: true}, (success, errorType) => {
-      if (!success){
-        console.log(errorType)
-      } else{
-        console.log('print success');
-        event.sender.send('wrote-pdf', false);
-      } 
-    })
+ 
 
     fs.writeFile(pdfPath, data, (error) => {
       if (error) throw error
@@ -90,7 +93,7 @@ app.on('activate', () => {
     })
   }).catch(error => {
     console.log(`Failed to write PDF to ${pdfPath}: `, error)
-  }) 
+  }) */
 /* 
   win.webContents.printToPDF(pdfSettings(), function(error, data){
     console.log('metodo imprimir');

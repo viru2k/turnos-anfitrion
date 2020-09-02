@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 @import "./../../../styles.scss";
 $fuschia: $background-boton;
 $button-bg: $background-boton;
@@ -10,7 +11,7 @@ $baby-blue: #f8faff;
 }
 
 h1 {
-  font-family: 'Varela Round', sans-serif !important;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 .bubbly{
   font-family: 'Varela Round', sans-serif !important;
@@ -131,4 +132,23 @@ h1 {
             max-height: 100vh;
             margin: auto;
 
+}
+
+
+.printme {
+	display: none;
+}
+@media print {
+	.no-printme  {
+		display: none;
+	}
+	.printme  {
+        display: block;
+        background-color: aqua;
+	}
+}
+
+
+.ancho-impresion{
+    width: 88mm;
 }

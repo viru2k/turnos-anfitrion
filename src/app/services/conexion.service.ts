@@ -56,4 +56,13 @@ public getURL_ARCHIVO(){
     }
     return conexion.URL_ARCHIVO;
 }
+
+
+public existeConexion(){
+    const conexion =   JSON.parse(localStorage.getItem('conexion'));
+    if (conexion == null) {
+        return false;
+    }
+    return true;
+}
 }

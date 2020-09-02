@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { URL_SERVICIOS } from '../config/config';
 import { ConexionService } from './conexion.service';
 
 @Injectable({
@@ -10,7 +11,7 @@ export class TurnoService {
   private url: string;
 
   constructor(public http: HttpClient, private conexionService: ConexionService) {
-    this.url = this.conexionService.getURL_SERVICIOS() ;
+    this.url =this.conexionService.getURL_SERVICIOS() ;
   }
 
   getProximoNumero(id: number) {

@@ -44,6 +44,8 @@ import {MenuItem, MessageService, DialogService, SelectItem} from 'primeng/api';
     AppRoutingModule,
     SweetAlert2Module.forRoot(),
     
+    // tslint:disable-next-line: max-line-length
+    SocketIoModule.forRoot(((JSON.parse(localStorage.getItem('conexion'))) !== undefined) ?  (JSON.parse(localStorage.getItem('conexion')).config) : { url: 'http://localhost:4444', options: {} }),
     RouterModule.forRoot( ROUTES, { useHash: true } ),
   ],
   entryComponents: [
@@ -62,5 +64,7 @@ import {MenuItem, MessageService, DialogService, SelectItem} from 'primeng/api';
      { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
      bootstrap: [AppComponent]
    })
-   export class AppModule { }
+   export class AppModule { 
+//    ((JSON.parse(localStorage.getItem('conexion'))) !== undefined) ? (JSON.parse(localStorage.getItem('conexion'))) : { url: 'http://localhost:4444', options: {} };
+   }
    
