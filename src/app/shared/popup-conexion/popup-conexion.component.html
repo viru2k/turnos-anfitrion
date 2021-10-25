@@ -1,9 +1,31 @@
 <div class="d-flex justifiy-content-center">
-    <h5 class=""> Url del servidor</h5>
+  <h5 class="">Url del servidor</h5>
 </div>
-<input class="form-control form-control-sm" [(ngModel)]="_URL_SERVICIOS">
-<small><label class="texto-success">*EJEMPLO : http://localhost/api-turnos/public/api/</label></small>
-<div class="d-flex justifiy-content-center mt-1">
+<input class="form-control form-control-sm" [(ngModel)]="_URL_SERVICIOS" />
+
+<div class="mt-5">
+  <small
+    ><label class="texto-success"
+      >*EJEMPLO : localhost - sin el http:// y sin / al final
+    </label></small
+  >
+</div>
+
+<div>
+  <small
+    ><label class="texto-danger"
+      >* Puede ser un DNS del tipo 19.168.1.1 o un nombre como server-turnos
+    </label></small
+  >
+</div>
+
+<div class="d-flex justifiy-content-center mt-2">
+  <button class="btn btn-info btn-block" (click)="confirmarDatos()">
+    GUARDAR CONFIGURACION
+  </button>
+</div>
+
+<!-- <div class="d-flex justifiy-content-center mt-1">
     <h5 class=""> Url de notificacion</h5>
 </div>
 <input type="text" class="form-control form-control-sm" [(ngModel)]="_config">
@@ -15,6 +37,4 @@
 <small><label class="texto-success">*EJEMPLO : http://localhost/api-turnos/public/</label></small>
 <div class="d-flex justifiy-content-center mt-2">
     <button class="btn btn-info btn-block " (click)="confirmarDatos()"> GUARDAR CONFIGURACION</button>
-</div>
-
-   
+</div> -->

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { UsuarioModulo } from '../models/user-modulo.model';
-import { URL_SERVICIOS } from '../config/config';
 import { ConexionService } from './conexion.service';
 
 @Injectable({

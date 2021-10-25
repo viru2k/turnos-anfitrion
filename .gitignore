@@ -44,3 +44,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#package
+/turnos-anfitrion-win32-x64
