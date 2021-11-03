@@ -35,7 +35,7 @@ export class PopupConexionComponent implements OnInit {
   confirmarDatos() {
     const _URL_SERVICIOS =
       "http://" + this._URL_SERVICIOS + "/api-turnos/public/api/";
-    const _config = this._URL_SERVICIOS + ":4444";
+    const _config = "http://" + this._URL_SERVICIOS + ":4444";
     const _URL_ARCHIVO =
       "http://" + this._URL_SERVICIOS + "/api-turnos/public/";
 

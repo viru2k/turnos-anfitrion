@@ -68,65 +68,18 @@ app.on('activate', () => {
 })
 
 
-
- ipc.on('print-to-pdf',function(event, data){
-  console.log('ingreso a imprimiendo');
-  win.webContents.print({silent: true}, (success, errorType) => {
-    if (!success){
-      console.log(errorType);
-    } else{
-      console.log(success);
-      console.log('print success');
-      event.sender.send('wrote-pdf', false);
-    } 
-  })
-
-/*
-  win.webContents.printToPDF(pdfSettings()).then(data => {
-    const pdfPath = path.join(os.tmpdir(),'./generated_pdf.pdf' );
-
- 
-
-    fs.writeFile(pdfPath, data, (error) => {
-      if (error) throw error
-      console.log(`Wrote PDF successfully to ${pdfPath}`)
-    })
-  }).catch(error => {
-    console.log(`Failed to write PDF to ${pdfPath}: `, error)
-  }) */
-/* 
-  win.webContents.printToPDF(pdfSettings(), function(error, data){
-    console.log('metodo imprimir');
-    if(error){
-      console.log('error');
-      return console.log(error.message);
-   }
-   const pdfPath = path.join(os.tmpdir(),'./generated_pdf.pdf' );
-    win.webContents.print({silent: false},function (success) {
-      console.log('imprimiendo');
-      if (success) {
+  ipc.on('print-to-pdf',function(event, data){
+    console.log('ingreso a imprimiendo');
+    win.webContents.print({silent: true}, (success, errorType) => {
+      if (!success){
+        console.log(errorType);
+      } else{
+        console.log(success);
         console.log('print success');
         event.sender.send('wrote-pdf', false);
-      } else {
-        console.log('error al imprimir');
-      }
-    });
-}) */
+      } 
+    })
+  
 });
 
-
-
-function pdfSettings() {
-  var option = {
-      landscape: false,
-      marginsType: 0,
-      printBackground: false,
-      printSelectionOnly: false,
-      
-  };
-return option;
-}
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
 

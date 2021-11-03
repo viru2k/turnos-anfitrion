@@ -62,7 +62,7 @@ export class PrincipalComponent implements OnInit {
     if (!this.conexionService.existeConexion()) {
       this.configurarRuta();
     }
-    this.turnoRecepcionPacienteExistente();
+    this.getSector();
   }
 
   animateButton(event) {
@@ -113,7 +113,7 @@ export class PrincipalComponent implements OnInit {
           this.loading = false;
           console.log("logueado");
           this.loggedIn = true;
-          this.turnoRecepcionPacienteExistente();
+          this.getSector();
         },
         (error) => {
           // error path
@@ -130,7 +130,7 @@ export class PrincipalComponent implements OnInit {
     modulos.forEach((element) => {});
   }
 
-  turnoRecepcionPacienteExistente() {
+  getSector() {
     this.existe = false;
     this.loading = true;
     try {
@@ -162,7 +162,7 @@ export class PrincipalComponent implements OnInit {
           if (resp[0]) {
             this.turno = resp;
             this.imprimir = true;
-            this.socketService.emitir("send-message", "numero-nuevo");
+            //      this.socketService.emitir("send-message", "numero-nuevo");
             this.generarPdf();
             /*     swal({
             text:'GENERANDO TICKET ',
@@ -194,7 +194,6 @@ export class PrincipalComponent implements OnInit {
   }
 
   generarPdf() {
-    // this.documentoService.sendMessage('llamando-anfitrion');
     this.horario = formatDate(new Date(), "dd/MM/yyyy hh:mm", "en");
     console.log(this.myDiv.nativeElement.innerHTML);
     this._electronService.ipcRenderer.send(
@@ -210,7 +209,7 @@ export class PrincipalComponent implements OnInit {
 
     setTimeout(() => {
       this.imprimir = false;
-    }, 3000);
+    }, 1000); // 1 segundo mostrando en pantalla
   }
 
   configurarRuta() {
